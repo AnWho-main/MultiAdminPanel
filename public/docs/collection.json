@@ -1,0 +1,886 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/local-hmdindia.in\/"
+        }
+    ],
+    "info": {
+        "name": "HMD-ADMIN",
+        "_postman_id": "f8de4692-2db1-457f-b6f4-20bd83bed479",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Country, State, City & Address",
+            "description": "\nAPIs for managing all country, state, city",
+            "item": [
+                {
+                    "name": "getAllCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-country"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully country list get...\",\n\"data\":\n[\n{\n\"id\": 1,\n\"name\": \"USA\",\n\"color\": \"#16b19f\",\n\"code\": \"us\",\n\"domain\": \"usa\",\n\"image\": \"152194054262639fda95ac05.12411768.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in USA\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.\",\n\"c_meta_keywords\": \"Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n},\n{\n\"id\": 2,\n\"name\": \"Canada\",\n\"color\": \"#990d00\",\n\"code\": \"ca\",\n\"domain\": \"canada\",\n\"image\": \"47659423262639bd6a30242.39786820.jpg\",\n\"c_meta_title\": \"Indian Website for Nris in Canada\",\n\"c_meta_description\": \"An Indian community website for all NRIS residing in Canada . Get information on\",\n\"c_meta_keywords\": \"Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website\",\n\"created_at\": \"20-Jan-2022 05:18 AM\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Country not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllStateByCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-state-by-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-state-by-country"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"country_id\":1\n}\n\n<aside class=\"note\">basepath\/api\/v1\/get-all-state-by-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully state list get...\",\n\"data\": [\n{\n\"id\": 3,\n\"name\": \"Aberconwy and Colwyn\",\n\"code\": \"AC\",\n\"domain\": \"aberconwyandcolwyn\",\n\"description\": \"Aberconwy and Colwyn\",\n\"logo\": \"\",\n\"s_meta_title\": \"\",\n\"s_meta_description\": \"\",\n\"s_meta_keywords\": \"\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\",\n\"created_by\": \"NULL\"\n},\n{\n\"id\": 5,\n\"name\": \"Aberdeen City\",\n\"code\": \"ADC\",\n\"domain\": \"aberdeencity\",\n\"description\": \"Aberdeen City\",\n\"logo\": \"\",\n\"s_meta_title\": \"\",\n\"s_meta_description\": \"\",\n\"s_meta_keywords\": \"\",\n\"header_image\": \"NULL\",\n\"header_image2\": \"NULL\",\n\"header_image3\": \"NULL\",\n\"created_by\": \"NULL\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"State not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCityByStateAndCountry",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-city-by-state-and-country",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-city-by-state-and-country"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*country_id\":1,\"*state_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"country_id\":101,\n\"state_id\":4037\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-all-city-by-state-and-country<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully city list get...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"Airdrie\",\n\"state_code\": \"AB\"\n},\n{\n\"id\": 2,\n\"name\": \"Brooks\",\n\"state_code\": \"AB\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllUserAddress",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-user-address",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-user-address"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":4037\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-all-user-address<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list get...\",\n\"data\": [\n{\n\"id\": 2,\n\"flat_house_no\": \"ABC\",\n\"address1\": \"ABC\",\n\"address2\": \"ABC\",\n\"street\": \"ABC\",\n\"landmark\": \"ABC\",\n\"city\": \"XXXX\",\n\"state\": \"XXX\",\n\"country\": \"CCCCC\",\n\"zip\": \"8****1\",\n\"location\": \"others\",\n\"is_default\": 0\n},\n{\n\"id\": 1,\n\"flat_house_no\": \"ABC\",\n\"address1\": \"ABC\",\n\"address2\": \"ABC\",\n\"street\": \"ABC\",\n\"landmark\": \"ABC\",\n\"city\": \"XXXX\",\n\"state\": \"XXX\",\n\"country\": \"CCCCC\",\n\"zip\": \"8****1\",\n\"location\": \"home\",\n\"is_default\": 1\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAddressById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-address-by-id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-address-by-id"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*address_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":4037,\n\"address_id\":45,\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-all-user-address<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list get...\",\n\"data\": {\n\"id\": 1,\n\"flat_house_no\": \"ABC\",\n\"address1\": \"ABC\",\n\"address2\": \"ABC\",\n\"street\": \"ABC\",\n\"landmark\": \"ABC\",\n\"city\": \"XXXX\",\n\"state\": \"XXX\",\n\"country\": \"CCCCC\",\n\"zip\": \"8****1\",\n\"location\": \"home\",\n\"is_default\": 1\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "addUserAddress",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/add-user-address",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/add-user-address"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*flat_house_no\":\"ABC123 in JSON BODY\",\"*address1\":\"ABC in JSON BODY\",\"*address2\":\"ABC in JSON BODY\",\"*street\":\"ABC in JSON BODY\",\"*landmark\":\"ABC in JSON BODY\",\"*city\":\"ABC in JSON BODY\",\"*state\":\"ABC in JSON BODY\",\"*country\":\"ABC in JSON BODY\",\"*zip\":\"ABC in JSON BODY\",\"*location\":\"'home\\\/work\\\/others' in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":21213,\n\"flat_house_no\":\"H455\",\n\"address1\":\"Test1\",\n\"address2\":\"test2\",\n\"street\":\"street name\",\n\"landmark\":\"before birani house\",\n\"city\":\"ABC\",\n\"state\":\"ABC\",\n\"country\":\"India\",\n\"zip\":\"8****1\",\n\"location\":\"home\"\n}\n<aside class=\"notice\">basepath\/api\/v1\/add-user-address<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully added...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "editUserAddress",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/edit-user-address",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/edit-user-address"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*address_id\":1,\"*user_id\":1,\"*flat_house_no\":\"ABC123 in JSON BODY\",\"*address1\":\"ABC in JSON BODY\",\"*address2\":\"ABC in JSON BODY\",\"*street\":\"ABC in JSON BODY\",\"*landmark\":\"ABC in JSON BODY\",\"*city\":\"ABC in JSON BODY\",\"*state\":\"ABC in JSON BODY\",\"*country\":\"ABC in JSON BODY\",\"*zip\":\"ABC in JSON BODY\",\"*location\":\"'home\\\/work\\\/others' in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"address_id\":21213,\n\"user_id\":21213,\n\"flat_house_no\":\"H455\",\n\"address1\":\"Test1\",\n\"address2\":\"test2\",\n\"street\":\"street name\",\n\"landmark\":\"before birani house\",\n\"city\":\"ABC\",\n\"state\":\"ABC\",\n\"country\":\"India\",\n\"zip\":\"8****1\",\n\"location\":\"home\"\n}\n<aside class=\"notice\">basepath\/api\/v1\/edit-user-address<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully updated...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteUserAddress",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/delete-user-address",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/delete-user-address"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*address_id\":1,\"*user_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"address_id\":21213,\n\"user_id\":21213\n}\n<aside class=\"notice\">basepath\/api\/v1\/delete-user-address<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully deleted...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dashboard",
+            "description": "\nAPIs for all dashboard",
+            "item": [
+                {
+                    "name": "getDashboard",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-dashboard",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-dashboard"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"note\">basepath\/api\/v1\/get-dashboard<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully data get...\",\n\"data\": {\n\"banners\": [\n{\n\"id\": 2,\n\"name\": \"Hmd dry fruit banner\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/HMD\/BANNER_IMG\/hmd-dry-fruit-banner-1696242649.png\"\n},\n{\n\"id\": 1,\n\"name\": \"HMD mango picklessss\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/HMD\/BANNER_IMG\/hmd-mango-picklessss-1696242608.png\"\n}\n],\n\"category\": [\n{\n\"id\": 4,\n\"name\": \"Biscuit\"\n},\n{\n\"id\": 3,\n\"name\": \"Dry Fruits\"\n},\n{\n\"id\": 2,\n\"name\": \"Ghee\"\n},\n{\n\"id\": 1,\n\"name\": \"Pickle\"\n}\n],\n\"collections\": [\n[\n{\n\"id\": 1,\n\"category_id\": {\n\"id\": 1,\n\"name\": \"Pickle\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Red Chilli Pickle 400gm\",\n\"slug\": \"hmd-red-chilli-pickle-400gm\",\n\"amount\": 310,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/HMD-Red-Chilli-Pickle-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 320,\n\"discount\": {\n\"id\": 4,\n\"name\": \"10 rs off\",\n\"type\": \"Rupees\",\n\"discount_value\": 10\n}\n},\n{\n\"id\": 2,\n\"category_id\": {\n\"id\": 1,\n\"name\": \"Pickle\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Lemon Pickle 400gm\",\n\"slug\": \"HMD-Lemon-Pickle-400gm\",\n\"amount\": 210,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/HMD-lemon-Pickle-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 231,\n\"discount\": {\n\"id\": 2,\n\"name\": \"10% discount\",\n\"type\": \"Percent\",\n\"discount_value\": 10\n}\n},\n{\n\"id\": 12,\n\"category_id\": {\n\"id\": 1,\n\"name\": \"Pickle\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD mango lachha pickle 500gm\",\n\"slug\": \"hmd-mango-lachha-pickle-500gm\",\n\"amount\": 340,\n\"quantity\": 50,\n\"volume\": \"500.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/hmd-mango-lachha-pickle-500gm-1696266474.png\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 340,\n\"discount\": null\n}\n]\n]\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Data not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-all-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-all-category"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n\n<aside class=\"notice\">basepath\/api\/v1\/get-all-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list found...\",\n\"data\": [\n{\n\"id\": 1,\n\"name\": \"Pickle\"\n},\n{\n\"id\": 2,\n\"name\": \"Ghee\"\n},\n{\n\"id\": 3,\n\"name\": \"Dry Fruits\"\n},\n{\n\"id\": 4,\n\"name\": \"Biscuit\"\n}\n]\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Country not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAllCollectionByCategory",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-collection-by-category",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-collection-by-category"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*category_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"category_id\":1,\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-collection-by-category<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list get...\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 10,\n\"category_id\": {\n\"id\": 4,\n\"name\": \"Biscuit\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Sweet Biscute 500gm\",\n\"slug\": \"hmd-sweet-biscute-500gm\",\n\"amount\": 60,\n\"quantity\": 100,\n\"volume\": \"450.00\",\n\"type\": \"Veg\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/HMD\/PRODUCT_IMG\/hmd-sweet-biscute-500gm-1696266184.png\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"day\",\n\"discount\": null\n}\n],\n\"first_page_url\": \"BASE_URL\/api\/v1\/get-collection-by-category?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"BASE_URL\/api\/v1\/get-collection-by-category\",\n\"per_page\": 12,\n\"prev_page_url\": null,\n\"to\": 1\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Data not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "searchProduct",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/search",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/search"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*keyword\":\"abc in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"keyword\":\"pickle\",\n}\n<aside class=\"notice\">basepath\/api\/v1\/search<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list get...\",\n\"data\": {\n\"current_page\": 1,\n\"data\": [\n{\n\"id\": 4,\n\"category_id\": {\n\"id\": 2,\n\"name\": \"Ghee\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Desi Makkhan Ghee 400gm\",\n\"slug\": \"hmd-sweet-biscute-500gm\",\n\"amount\": 500,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/HMD-desi-makkhan-ghee-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 525,\n\"discount\": {\n\"id\": 1,\n\"name\": \"5% discount\",\n\"type\": \"Percent\",\n\"discount_value\": 5\n}\n},\n{\n\"id\": 5,\n\"category_id\": {\n\"id\": 2,\n\"name\": \"Ghee\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Desi Chhali Ghee 400gm\",\n\"slug\": \"hmd-sweet-biscute-500gm\",\n\"amount\": 550,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/HMD-desi-chhali-ghee-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 577.5,\n\"discount\": {\n\"id\": 1,\n\"name\": \"5% discount\",\n\"type\": \"Percent\",\n\"discount_value\": 5\n}\n},\n{\n\"id\": 6,\n\"category_id\": {\n\"id\": 2,\n\"name\": \"Ghee\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Desi Malai Ghee 400gm\",\n\"slug\": \"hmd-sweet-biscute-500gm\",\n\"amount\": 650,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"PATH\/HMD-desi-malai-ghee-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"mrp\": 650,\n\"discount\": null\n}\n],\n\"first_page_url\": \"http:\/\/local-hmdindia.in\/api\/v1\/search?page=1\",\n\"from\": 1,\n\"next_page_url\": null,\n\"path\": \"http:\/\/local-hmdindia.in\/api\/v1\/search\",\n\"per_page\": 12,\n\"prev_page_url\": null,\n\"to\": 3\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Data not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getProductById",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-product-details",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-product-details"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*product_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"product_id\":1\n}\n<aside class=\"notice\">basepath\/api\/v1\/get-product-by-id<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully list get...\",\n\"data\": {\n\"id\": 1,\n\"category_id\": {\n\"id\": 1,\n\"name\": \"Pickle\"\n},\n\"unit_id\": {\n\"id\": 3,\n\"name\": \"Gm\"\n},\n\"name\": \"HMD Red Chilli Pickle 400gm\",\n\"slug\": \"hmd-red-chilli-pickle-400gm\",\n\"description\": \"Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.\",\n\"amount\": 310,\n\"quantity\": 50,\n\"volume\": \"400.00\",\n\"type\": \"Veg\",\n\"image\": \"http:\/\/localhost\/upload\/image-data\/HMD\/PRODUCT_IMG\/HMD-Red-Chilli-Pickle-400gm.jpg\",\n\"max_shelf_life\": 72,\n\"shelf_duration\": \"month\",\n\"highlight\": [\n\"Pure Red Chilli\",\n\"Pure Ingredients\",\n\"Long Shelf Life\",\n\"Calories\",\n\"Protein\",\n\"Organic\",\n\"Chemical Free\",\n\"100% Natural\",\n\"Pure Hand Made\"\n],\n\"ingredient\": [\n\"Red Chilli\",\n\"Mustard Oil\",\n\"Termeric\",\n\"Salt\"\n],\n\"nutritional_information\": [\n\"Sodium 10mg\",\n\"Potassium 0.6mg\",\n\"Sugar 0mg\",\n\"Cholesterol 10mg\"\n],\n\"dietary_preference\": [\n\"Low Cholesterol\",\n\"Low Sodium\",\n\"Gluten Free\",\n\"Wheat Free\"\n],\n\"other_feature\": [\n\"Low Cholesterol\",\n\"Tasty\",\n\"Spicy\",\n\"Sugger Free\",\n\"Pure Organic\",\n\"Natural\"\n],\n\"spice_level\": \"Full\",\n\"meta_title\": \"HMD Red Chilli Pickle 400gm\",\n\"meta_description\": \"Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.\",\n\"meta_keyword\": \"best pickle, hand made pickle, pure organic, pickle, red chilli pickle\",\n\"mrp\": 320,\n\"discount\": {\n\"id\": 4,\n\"name\": \"10 rs off\",\n\"type\": \"Rupees\",\n\"discount_value\": 10\n}\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Data not found...\",\n\"data\": []\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Login, Register",
+            "description": "\nAPIs for managing all Auth Related",
+            "item": [
+                {
+                    "name": "register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*name\":\"vero\",\"*email\":\"madyson78@example.net\",\"*mobile\":\"incidunt\",\"*password\":\"occaecati\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"name\":\"Abc\",\n\"email\":\"You@domain.com\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\"\n}\n<aside class=\"notice\">basepath\/api\/v1\/register<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Registered...\",\n\"data\": {\n\"user_id\": 1,\n\"email\": \"you@domain.com\"\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 202,
+                            "body": "{\n\"status\": false,\n\"status_code\": 202,\n\"message\": \"Oops, please try again...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 409,
+                            "body": "{\n\"status\": false,\n\"status_code\": 409,\n\"message\": \"Email Id already exist...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email_id\":\"eius\",\"*password\":\"ut\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\"\n}\n <aside class=\"notice\">basepath\/api\/v1\/login<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n     \"status\": true,\n     \"status_code\": 200,\n     \"message\": \"Successfully login..\",\n     \"data\": {\n         \"user_data\": {\n             \"user_id\": 1,\n             \"name\": \"Md Saddam Hussain\",\n             \"email\": \"Hussain@gmail.com\"\n         },\n         \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWwtbnJpcy5jYS9hcGkvdjEvbG9naW4iLCJpYXQiOjE2ODk2Nzk3ODYsImV4cCI6MTY4OTY4MzM4NiwibmJmIjoxNjg5Njc5Nzg2LCJqdGkiOiJUeXFsTU95MlA0WXpibXFsIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xSMoCqyWexiUAmnCNmC6xJZjvOWbQM9GMRZuQUYpSfc\",\n         \"token_type\": \"bearer\",\n         \"expires_in\": 60\n     }\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n     \"status\": false,\n     \"status_code\": 401,\n     \"message\": \"Incorrect Password...\",\n     \"data\": []\n }",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n     \"status\": false,\n     \"status_code\": 404,\n     \"message\": \"Eamil id not found...\",\n     \"data\": []\n }",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "forgotPass",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/forgot-pass",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/forgot-pass"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email\":\"eulalia42@example.net\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-pass<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully email send...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 201,\n\"message\": \"Oops, something went wrong...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 202,
+                            "body": "{\n\"status\": false,\n\"status_code\": 202,\n\"message\": \"Oops, please try again...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "changeForgotPassword",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/forgot-password-change",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/forgot-password-change"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*email\":\"lavada.schuster@example.net\",\"*new_password\":\"debitis\",\"*retype_password\":\"fugit\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath\/api\/v1\/forgot-password-change<\/aside>",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully password updated...\",\n\"data\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 201,\n\"message\": \"Oops, some problem occure, Please try again...\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Profile Related",
+            "description": "\nAPIs for managing all user's profile related",
+            "item": [
+                {
+                    "name": "getUserProfile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/get-user-profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/get-user-profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1\n}\n\n<aside class=\"notice\">basepath\/api\/v1\/get-user-profile<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Profile Get...\",\n\"data\": {\n\"id\": 1,\n\"first_name\": \"Abc\",\n\"last_name\": \"Def\",\n\"email\": \"you@domain.com\",\n\"dob\": \"2023-02-02\",\n\"mobile\": \"9899****54\"\n}\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "changePassword",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/change-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/change-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer _token required ."
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"*user_id\":1,\"*current_password\":\"1,2,3 in JSON BODY\",\"*new_password\":\"1,2,3 in JSON BODY\",\"*retype_password\":\"1,2,3 in JSON BODY\"}"
+                        },
+                        "description": "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Oops, something went wrong...\n\nEX\n {\n\"user_id\":1,\n\"current_password\":\"Abc@123456789\",\n\"new_password\":\"Abc@12345\",\n\"retype_password\":\"Abc@12345\"\n}\n<aside class=\"notice\">basepath\/api\/v1\/change-password<\/aside>"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully Password Changed...\",\n\"result\": []\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"User not found...\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 403,
+                            "body": "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n}\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

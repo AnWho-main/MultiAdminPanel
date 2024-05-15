@@ -1,0 +1,2550 @@
+openapi: 3.0.3
+info:
+  title: HMD-ADMIN
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://local-hmdindia.in'
+paths:
+  /api/v1/get-all-country:
+    get:
+      summary: getAllCountry
+      operationId: getAllCountry
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-country</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully country list get...'
+                  data:
+                    -
+                      id: 1
+                      name: USA
+                      color: '#16b19f'
+                      code: us
+                      domain: usa
+                      image: 152194054262639fda95ac05.12411768.jpg
+                      c_meta_title: 'Indian Website for Nris in USA'
+                      c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                      c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                      created_at: '20-Jan-2022 05:18 AM'
+                    -
+                      id: 2
+                      name: Canada
+                      color: '#990d00'
+                      code: ca
+                      domain: canada
+                      image: 47659423262639bd6a30242.39786820.jpg
+                      c_meta_title: 'Indian Website for Nris in Canada'
+                      c_meta_description: 'An Indian community website for all NRIS residing in Canada . Get information on'
+                      c_meta_keywords: 'Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website'
+                      created_at: '20-Jan-2022 05:18 AM'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully country list get...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: USA
+                        color: '#16b19f'
+                        code: us
+                        domain: usa
+                        image: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title: 'Indian Website for Nris in USA'
+                        c_meta_description: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                      -
+                        id: 2
+                        name: Canada
+                        color: '#990d00'
+                        code: ca
+                        domain: canada
+                        image: 47659423262639bd6a30242.39786820.jpg
+                        c_meta_title: 'Indian Website for Nris in Canada'
+                        c_meta_description: 'An Indian community website for all NRIS residing in Canada . Get information on'
+                        c_meta_keywords: 'Indian websites in Canada, NRI websites, Indian community websites, classified website for NRIS in Canada, free ads website'
+                        created_at: '20-Jan-2022 05:18 AM'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: USA
+                        color:
+                          type: string
+                          example: '#16b19f'
+                        code:
+                          type: string
+                          example: us
+                        domain:
+                          type: string
+                          example: usa
+                        image:
+                          type: string
+                          example: 152194054262639fda95ac05.12411768.jpg
+                        c_meta_title:
+                          type: string
+                          example: 'Indian Website for Nris in USA'
+                        c_meta_description:
+                          type: string
+                          example: 'An Indian community website for all NRIS residing in United States. Get information on local real estate, Indian movies, restaurants, visiting spots etc.'
+                        c_meta_keywords:
+                          type: string
+                          example: 'Indian websites in USA, NRI websites, Indian community websites, classified website for NRIS in USA, free ads website'
+                        created_at:
+                          type: string
+                          example: '20-Jan-2022 05:18 AM'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Country not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Country not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Country, State, City & Address'
+      security: []
+  /api/v1/get-all-state-by-country:
+    post:
+      summary: getAllStateByCountry
+      operationId: getAllStateByCountry
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"country_id\":1\n}\n\n<aside class=\"note\">basepath/api/v1/get-all-state-by-country</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully state list get...'
+                  data:
+                    -
+                      id: 3
+                      name: 'Aberconwy and Colwyn'
+                      code: AC
+                      domain: aberconwyandcolwyn
+                      description: 'Aberconwy and Colwyn'
+                      logo: ''
+                      s_meta_title: ''
+                      s_meta_description: ''
+                      s_meta_keywords: ''
+                      header_image: 'NULL'
+                      header_image2: 'NULL'
+                      header_image3: 'NULL'
+                      created_by: 'NULL'
+                    -
+                      id: 5
+                      name: 'Aberdeen City'
+                      code: ADC
+                      domain: aberdeencity
+                      description: 'Aberdeen City'
+                      logo: ''
+                      s_meta_title: ''
+                      s_meta_description: ''
+                      s_meta_keywords: ''
+                      header_image: 'NULL'
+                      header_image2: 'NULL'
+                      header_image3: 'NULL'
+                      created_by: 'NULL'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully state list get...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        name: 'Aberconwy and Colwyn'
+                        code: AC
+                        domain: aberconwyandcolwyn
+                        description: 'Aberconwy and Colwyn'
+                        logo: ''
+                        s_meta_title: ''
+                        s_meta_description: ''
+                        s_meta_keywords: ''
+                        header_image: 'NULL'
+                        header_image2: 'NULL'
+                        header_image3: 'NULL'
+                        created_by: 'NULL'
+                      -
+                        id: 5
+                        name: 'Aberdeen City'
+                        code: ADC
+                        domain: aberdeencity
+                        description: 'Aberdeen City'
+                        logo: ''
+                        s_meta_title: ''
+                        s_meta_description: ''
+                        s_meta_keywords: ''
+                        header_image: 'NULL'
+                        header_image2: 'NULL'
+                        header_image3: 'NULL'
+                        created_by: 'NULL'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 3
+                        name:
+                          type: string
+                          example: 'Aberconwy and Colwyn'
+                        code:
+                          type: string
+                          example: AC
+                        domain:
+                          type: string
+                          example: aberconwyandcolwyn
+                        description:
+                          type: string
+                          example: 'Aberconwy and Colwyn'
+                        logo:
+                          type: string
+                          example: ''
+                        s_meta_title:
+                          type: string
+                          example: ''
+                        s_meta_description:
+                          type: string
+                          example: ''
+                        s_meta_keywords:
+                          type: string
+                          example: ''
+                        header_image:
+                          type: string
+                          example: 'NULL'
+                        header_image2:
+                          type: string
+                          example: 'NULL'
+                        header_image3:
+                          type: string
+                          example: 'NULL'
+                        created_by:
+                          type: string
+                          example: 'NULL'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'State not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'State not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*country_id'
+      security: []
+  /api/v1/get-all-city-by-state-and-country:
+    post:
+      summary: getAllCityByStateAndCountry
+      operationId: getAllCityByStateAndCountry
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"country_id\":101,\n\"state_id\":4037\n}\n<aside class=\"notice\">basepath/api/v1/get-all-city-by-state-and-country</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully city list get...'
+                  data:
+                    -
+                      id: 1
+                      name: Airdrie
+                      state_code: AB
+                    -
+                      id: 2
+                      name: Brooks
+                      state_code: AB
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully city list get...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Airdrie
+                        state_code: AB
+                      -
+                        id: 2
+                        name: Brooks
+                        state_code: AB
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Airdrie
+                        state_code:
+                          type: string
+                          example: AB
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'City Not Found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'City Not Found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*country_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*state_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*country_id'
+                - '*state_id'
+      security: []
+  /api/v1/get-all-user-address:
+    post:
+      summary: getAllUserAddress
+      operationId: getAllUserAddress
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":4037\n}\n<aside class=\"notice\">basepath/api/v1/get-all-user-address</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list get...'
+                  data:
+                    -
+                      id: 2
+                      flat_house_no: ABC
+                      address1: ABC
+                      address2: ABC
+                      street: ABC
+                      landmark: ABC
+                      city: XXXX
+                      state: XXX
+                      country: CCCCC
+                      zip: '8****1'
+                      location: others
+                      is_default: 0
+                    -
+                      id: 1
+                      flat_house_no: ABC
+                      address1: ABC
+                      address2: ABC
+                      street: ABC
+                      landmark: ABC
+                      city: XXXX
+                      state: XXX
+                      country: CCCCC
+                      zip: '8****1'
+                      location: home
+                      is_default: 1
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list get...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        flat_house_no: ABC
+                        address1: ABC
+                        address2: ABC
+                        street: ABC
+                        landmark: ABC
+                        city: XXXX
+                        state: XXX
+                        country: CCCCC
+                        zip: '8****1'
+                        location: others
+                        is_default: 0
+                      -
+                        id: 1
+                        flat_house_no: ABC
+                        address1: ABC
+                        address2: ABC
+                        street: ABC
+                        landmark: ABC
+                        city: XXXX
+                        state: XXX
+                        country: CCCCC
+                        zip: '8****1'
+                        location: home
+                        is_default: 1
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        flat_house_no:
+                          type: string
+                          example: ABC
+                        address1:
+                          type: string
+                          example: ABC
+                        address2:
+                          type: string
+                          example: ABC
+                        street:
+                          type: string
+                          example: ABC
+                        landmark:
+                          type: string
+                          example: ABC
+                        city:
+                          type: string
+                          example: XXXX
+                        state:
+                          type: string
+                          example: XXX
+                        country:
+                          type: string
+                          example: CCCCC
+                        zip:
+                          type: string
+                          example: '8****1'
+                        location:
+                          type: string
+                          example: others
+                        is_default:
+                          type: integer
+                          example: 0
+        404:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*user_id'
+  /api/v1/get-address-by-id:
+    post:
+      summary: getAddressById
+      operationId: getAddressById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":4037,\n\"address_id\":45,\n}\n<aside class=\"notice\">basepath/api/v1/get-all-user-address</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list get...'
+                  data:
+                    id: 1
+                    flat_house_no: ABC
+                    address1: ABC
+                    address2: ABC
+                    street: ABC
+                    landmark: ABC
+                    city: XXXX
+                    state: XXX
+                    country: CCCCC
+                    zip: '8****1'
+                    location: home
+                    is_default: 1
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list get...'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      flat_house_no:
+                        type: string
+                        example: ABC
+                      address1:
+                        type: string
+                        example: ABC
+                      address2:
+                        type: string
+                        example: ABC
+                      street:
+                        type: string
+                        example: ABC
+                      landmark:
+                        type: string
+                        example: ABC
+                      city:
+                        type: string
+                        example: XXXX
+                      state:
+                        type: string
+                        example: XXX
+                      country:
+                        type: string
+                        example: CCCCC
+                      zip:
+                        type: string
+                        example: '8****1'
+                      location:
+                        type: string
+                        example: home
+                      is_default:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"City Not Found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*address_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*user_id'
+                - '*address_id'
+  /api/v1/add-user-address:
+    post:
+      summary: addUserAddress
+      operationId: addUserAddress
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"user_id\":21213,\n\"flat_house_no\":\"H455\",\n\"address1\":\"Test1\",\n\"address2\":\"test2\",\n\"street\":\"street name\",\n\"landmark\":\"before birani house\",\n\"city\":\"ABC\",\n\"state\":\"ABC\",\n\"country\":\"India\",\n\"zip\":\"8****1\",\n\"location\":\"home\"\n}\n<aside class=\"notice\">basepath/api/v1/add-user-address</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully added...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*flat_house_no':
+                  type: string
+                  description: ''
+                  example: 'ABC123 in JSON BODY'
+                '*address1':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*address2':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*street':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*landmark':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*city':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*state':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*country':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*zip':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*location':
+                  type: string
+                  description: ''
+                  example: "'home/work/others' in JSON BODY"
+              required:
+                - '*user_id'
+                - '*flat_house_no'
+                - '*address1'
+                - '*street'
+                - '*landmark'
+                - '*city'
+                - '*state'
+                - '*country'
+                - '*zip'
+                - '*location'
+  /api/v1/edit-user-address:
+    post:
+      summary: editUserAddress
+      operationId: editUserAddress
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"address_id\":21213,\n\"user_id\":21213,\n\"flat_house_no\":\"H455\",\n\"address1\":\"Test1\",\n\"address2\":\"test2\",\n\"street\":\"street name\",\n\"landmark\":\"before birani house\",\n\"city\":\"ABC\",\n\"state\":\"ABC\",\n\"country\":\"India\",\n\"zip\":\"8****1\",\n\"location\":\"home\"\n}\n<aside class=\"notice\">basepath/api/v1/edit-user-address</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully updated...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*address_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*flat_house_no':
+                  type: string
+                  description: ''
+                  example: 'ABC123 in JSON BODY'
+                '*address1':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*address2':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*street':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*landmark':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*city':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*state':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*country':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*zip':
+                  type: string
+                  description: ''
+                  example: 'ABC in JSON BODY'
+                '*location':
+                  type: string
+                  description: ''
+                  example: "'home/work/others' in JSON BODY"
+              required:
+                - '*address_id'
+                - '*user_id'
+                - '*flat_house_no'
+                - '*address1'
+                - '*street'
+                - '*landmark'
+                - '*city'
+                - '*state'
+                - '*country'
+                - '*zip'
+                - '*location'
+  /api/v1/delete-user-address:
+    post:
+      summary: deleteUserAddress
+      operationId: deleteUserAddress
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"address_id\":21213,\n\"user_id\":21213\n}\n<aside class=\"notice\">basepath/api/v1/delete-user-address</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": true,\n\"status_code\": 200,\n\"message\": \"Successfully deleted...\",\n\"data\": []\n}\n\n\n\n\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'Country, State, City & Address'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*address_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*address_id'
+                - '*user_id'
+  /api/v1/get-dashboard:
+    get:
+      summary: getDashboard
+      operationId: getDashboard
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"note\">basepath/api/v1/get-dashboard</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully data get...'
+                  data:
+                    banners:
+                      -
+                        id: 2
+                        name: 'Hmd dry fruit banner'
+                        image: 'http://localhost/upload/image-data/HMD/BANNER_IMG/hmd-dry-fruit-banner-1696242649.png'
+                      -
+                        id: 1
+                        name: 'HMD mango picklessss'
+                        image: 'http://localhost/upload/image-data/HMD/BANNER_IMG/hmd-mango-picklessss-1696242608.png'
+                    category:
+                      -
+                        id: 4
+                        name: Biscuit
+                      -
+                        id: 3
+                        name: 'Dry Fruits'
+                      -
+                        id: 2
+                        name: Ghee
+                      -
+                        id: 1
+                        name: Pickle
+                    collections:
+                      -
+                        -
+                          id: 1
+                          category_id:
+                            id: 1
+                            name: Pickle
+                          unit_id:
+                            id: 3
+                            name: Gm
+                          name: 'HMD Red Chilli Pickle 400gm'
+                          slug: hmd-red-chilli-pickle-400gm
+                          amount: 310
+                          quantity: 50
+                          volume: '400.00'
+                          type: Veg
+                          image: PATH/HMD-Red-Chilli-Pickle-400gm.jpg
+                          max_shelf_life: 72
+                          shelf_duration: month
+                          mrp: 320
+                          discount:
+                            id: 4
+                            name: '10 rs off'
+                            type: Rupees
+                            discount_value: 10
+                        -
+                          id: 2
+                          category_id:
+                            id: 1
+                            name: Pickle
+                          unit_id:
+                            id: 3
+                            name: Gm
+                          name: 'HMD Lemon Pickle 400gm'
+                          slug: HMD-Lemon-Pickle-400gm
+                          amount: 210
+                          quantity: 50
+                          volume: '400.00'
+                          type: Veg
+                          image: PATH/HMD-lemon-Pickle-400gm.jpg
+                          max_shelf_life: 72
+                          shelf_duration: month
+                          mrp: 231
+                          discount:
+                            id: 2
+                            name: '10% discount'
+                            type: Percent
+                            discount_value: 10
+                        -
+                          id: 12
+                          category_id:
+                            id: 1
+                            name: Pickle
+                          unit_id:
+                            id: 3
+                            name: Gm
+                          name: 'HMD mango lachha pickle 500gm'
+                          slug: hmd-mango-lachha-pickle-500gm
+                          amount: 340
+                          quantity: 50
+                          volume: '500.00'
+                          type: Veg
+                          image: PATH/hmd-mango-lachha-pickle-500gm-1696266474.png
+                          max_shelf_life: 72
+                          shelf_duration: month
+                          mrp: 340
+                          discount: null
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully data get...'
+                  data:
+                    type: object
+                    properties:
+                      banners:
+                        type: array
+                        example:
+                          -
+                            id: 2
+                            name: 'Hmd dry fruit banner'
+                            image: 'http://localhost/upload/image-data/HMD/BANNER_IMG/hmd-dry-fruit-banner-1696242649.png'
+                          -
+                            id: 1
+                            name: 'HMD mango picklessss'
+                            image: 'http://localhost/upload/image-data/HMD/BANNER_IMG/hmd-mango-picklessss-1696242608.png'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: 'Hmd dry fruit banner'
+                            image:
+                              type: string
+                              example: 'http://localhost/upload/image-data/HMD/BANNER_IMG/hmd-dry-fruit-banner-1696242649.png'
+                      category:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            name: Biscuit
+                          -
+                            id: 3
+                            name: 'Dry Fruits'
+                          -
+                            id: 2
+                            name: Ghee
+                          -
+                            id: 1
+                            name: Pickle
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            name:
+                              type: string
+                              example: Biscuit
+                      collections:
+                        type: array
+                        example:
+                          -
+                            -
+                              id: 1
+                              category_id:
+                                id: 1
+                                name: Pickle
+                              unit_id:
+                                id: 3
+                                name: Gm
+                              name: 'HMD Red Chilli Pickle 400gm'
+                              slug: hmd-red-chilli-pickle-400gm
+                              amount: 310
+                              quantity: 50
+                              volume: '400.00'
+                              type: Veg
+                              image: PATH/HMD-Red-Chilli-Pickle-400gm.jpg
+                              max_shelf_life: 72
+                              shelf_duration: month
+                              mrp: 320
+                              discount:
+                                id: 4
+                                name: '10 rs off'
+                                type: Rupees
+                                discount_value: 10
+                            -
+                              id: 2
+                              category_id:
+                                id: 1
+                                name: Pickle
+                              unit_id:
+                                id: 3
+                                name: Gm
+                              name: 'HMD Lemon Pickle 400gm'
+                              slug: HMD-Lemon-Pickle-400gm
+                              amount: 210
+                              quantity: 50
+                              volume: '400.00'
+                              type: Veg
+                              image: PATH/HMD-lemon-Pickle-400gm.jpg
+                              max_shelf_life: 72
+                              shelf_duration: month
+                              mrp: 231
+                              discount:
+                                id: 2
+                                name: '10% discount'
+                                type: Percent
+                                discount_value: 10
+                            -
+                              id: 12
+                              category_id:
+                                id: 1
+                                name: Pickle
+                              unit_id:
+                                id: 3
+                                name: Gm
+                              name: 'HMD mango lachha pickle 500gm'
+                              slug: hmd-mango-lachha-pickle-500gm
+                              amount: 340
+                              quantity: 50
+                              volume: '500.00'
+                              type: Veg
+                              image: PATH/hmd-mango-lachha-pickle-500gm-1696266474.png
+                              max_shelf_life: 72
+                              shelf_duration: month
+                              mrp: 340
+                              discount: null
+                        items:
+                          type: array
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Data not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Data not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Dashboard
+      security: []
+  /api/v1/get-all-category:
+    get:
+      summary: getAllCategory
+      operationId: getAllCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n\n<aside class=\"notice\">basepath/api/v1/get-all-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list found...'
+                  data:
+                    -
+                      id: 1
+                      name: Pickle
+                    -
+                      id: 2
+                      name: Ghee
+                    -
+                      id: 3
+                      name: 'Dry Fruits'
+                    -
+                      id: 4
+                      name: Biscuit
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list found...'
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: Pickle
+                      -
+                        id: 2
+                        name: Ghee
+                      -
+                        id: 3
+                        name: 'Dry Fruits'
+                      -
+                        id: 4
+                        name: Biscuit
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: Pickle
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Country not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Country not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Dashboard
+      security: []
+  /api/v1/get-collection-by-category:
+    post:
+      summary: getAllCollectionByCategory
+      operationId: getAllCollectionByCategory
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"category_id\":1,\n}\n<aside class=\"notice\">basepath/api/v1/get-collection-by-category</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list get...'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 10
+                        category_id:
+                          id: 4
+                          name: Biscuit
+                        unit_id:
+                          id: 3
+                          name: Gm
+                        name: 'HMD Sweet Biscute 500gm'
+                        slug: hmd-sweet-biscute-500gm
+                        amount: 60
+                        quantity: 100
+                        volume: '450.00'
+                        type: Veg
+                        image: 'http://localhost/upload/image-data/HMD/PRODUCT_IMG/hmd-sweet-biscute-500gm-1696266184.png'
+                        max_shelf_life: 72
+                        shelf_duration: day
+                        discount: null
+                    first_page_url: 'BASE_URL/api/v1/get-collection-by-category?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: BASE_URL/api/v1/get-collection-by-category
+                    per_page: 12
+                    prev_page_url: null
+                    to: 1
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list get...'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 10
+                            category_id:
+                              id: 4
+                              name: Biscuit
+                            unit_id:
+                              id: 3
+                              name: Gm
+                            name: 'HMD Sweet Biscute 500gm'
+                            slug: hmd-sweet-biscute-500gm
+                            amount: 60
+                            quantity: 100
+                            volume: '450.00'
+                            type: Veg
+                            image: 'http://localhost/upload/image-data/HMD/PRODUCT_IMG/hmd-sweet-biscute-500gm-1696266184.png'
+                            max_shelf_life: 72
+                            shelf_duration: day
+                            discount: null
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 10
+                            category_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 4
+                                name:
+                                  type: string
+                                  example: Biscuit
+                            unit_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 3
+                                name:
+                                  type: string
+                                  example: Gm
+                            name:
+                              type: string
+                              example: 'HMD Sweet Biscute 500gm'
+                            slug:
+                              type: string
+                              example: hmd-sweet-biscute-500gm
+                            amount:
+                              type: integer
+                              example: 60
+                            quantity:
+                              type: integer
+                              example: 100
+                            volume:
+                              type: string
+                              example: '450.00'
+                            type:
+                              type: string
+                              example: Veg
+                            image:
+                              type: string
+                              example: 'http://localhost/upload/image-data/HMD/PRODUCT_IMG/hmd-sweet-biscute-500gm-1696266184.png'
+                            max_shelf_life:
+                              type: integer
+                              example: 72
+                            shelf_duration:
+                              type: string
+                              example: day
+                            discount:
+                              type: string
+                              example: null
+                      first_page_url:
+                        type: string
+                        example: 'BASE_URL/api/v1/get-collection-by-category?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: BASE_URL/api/v1/get-collection-by-category
+                      per_page:
+                        type: integer
+                        example: 12
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Data not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Data not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Dashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*category_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*category_id'
+      security: []
+  /api/v1/search:
+    post:
+      summary: searchProduct
+      operationId: searchProduct
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"keyword\":\"pickle\",\n}\n<aside class=\"notice\">basepath/api/v1/search</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list get...'
+                  data:
+                    current_page: 1
+                    data:
+                      -
+                        id: 4
+                        category_id:
+                          id: 2
+                          name: Ghee
+                        unit_id:
+                          id: 3
+                          name: Gm
+                        name: 'HMD Desi Makkhan Ghee 400gm'
+                        slug: hmd-sweet-biscute-500gm
+                        amount: 500
+                        quantity: 50
+                        volume: '400.00'
+                        type: Veg
+                        image: PATH/HMD-desi-makkhan-ghee-400gm.jpg
+                        max_shelf_life: 72
+                        shelf_duration: month
+                        mrp: 525
+                        discount:
+                          id: 1
+                          name: '5% discount'
+                          type: Percent
+                          discount_value: 5
+                      -
+                        id: 5
+                        category_id:
+                          id: 2
+                          name: Ghee
+                        unit_id:
+                          id: 3
+                          name: Gm
+                        name: 'HMD Desi Chhali Ghee 400gm'
+                        slug: hmd-sweet-biscute-500gm
+                        amount: 550
+                        quantity: 50
+                        volume: '400.00'
+                        type: Veg
+                        image: PATH/HMD-desi-chhali-ghee-400gm.jpg
+                        max_shelf_life: 72
+                        shelf_duration: month
+                        mrp: 577.5
+                        discount:
+                          id: 1
+                          name: '5% discount'
+                          type: Percent
+                          discount_value: 5
+                      -
+                        id: 6
+                        category_id:
+                          id: 2
+                          name: Ghee
+                        unit_id:
+                          id: 3
+                          name: Gm
+                        name: 'HMD Desi Malai Ghee 400gm'
+                        slug: hmd-sweet-biscute-500gm
+                        amount: 650
+                        quantity: 50
+                        volume: '400.00'
+                        type: Veg
+                        image: PATH/HMD-desi-malai-ghee-400gm.jpg
+                        max_shelf_life: 72
+                        shelf_duration: month
+                        mrp: 650
+                        discount: null
+                    first_page_url: 'http://local-hmdindia.in/api/v1/search?page=1'
+                    from: 1
+                    next_page_url: null
+                    path: 'http://local-hmdindia.in/api/v1/search'
+                    per_page: 12
+                    prev_page_url: null
+                    to: 3
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list get...'
+                  data:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      data:
+                        type: array
+                        example:
+                          -
+                            id: 4
+                            category_id:
+                              id: 2
+                              name: Ghee
+                            unit_id:
+                              id: 3
+                              name: Gm
+                            name: 'HMD Desi Makkhan Ghee 400gm'
+                            slug: hmd-sweet-biscute-500gm
+                            amount: 500
+                            quantity: 50
+                            volume: '400.00'
+                            type: Veg
+                            image: PATH/HMD-desi-makkhan-ghee-400gm.jpg
+                            max_shelf_life: 72
+                            shelf_duration: month
+                            mrp: 525
+                            discount:
+                              id: 1
+                              name: '5% discount'
+                              type: Percent
+                              discount_value: 5
+                          -
+                            id: 5
+                            category_id:
+                              id: 2
+                              name: Ghee
+                            unit_id:
+                              id: 3
+                              name: Gm
+                            name: 'HMD Desi Chhali Ghee 400gm'
+                            slug: hmd-sweet-biscute-500gm
+                            amount: 550
+                            quantity: 50
+                            volume: '400.00'
+                            type: Veg
+                            image: PATH/HMD-desi-chhali-ghee-400gm.jpg
+                            max_shelf_life: 72
+                            shelf_duration: month
+                            mrp: 577.5
+                            discount:
+                              id: 1
+                              name: '5% discount'
+                              type: Percent
+                              discount_value: 5
+                          -
+                            id: 6
+                            category_id:
+                              id: 2
+                              name: Ghee
+                            unit_id:
+                              id: 3
+                              name: Gm
+                            name: 'HMD Desi Malai Ghee 400gm'
+                            slug: hmd-sweet-biscute-500gm
+                            amount: 650
+                            quantity: 50
+                            volume: '400.00'
+                            type: Veg
+                            image: PATH/HMD-desi-malai-ghee-400gm.jpg
+                            max_shelf_life: 72
+                            shelf_duration: month
+                            mrp: 650
+                            discount: null
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 4
+                            category_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 2
+                                name:
+                                  type: string
+                                  example: Ghee
+                            unit_id:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 3
+                                name:
+                                  type: string
+                                  example: Gm
+                            name:
+                              type: string
+                              example: 'HMD Desi Makkhan Ghee 400gm'
+                            slug:
+                              type: string
+                              example: hmd-sweet-biscute-500gm
+                            amount:
+                              type: integer
+                              example: 500
+                            quantity:
+                              type: integer
+                              example: 50
+                            volume:
+                              type: string
+                              example: '400.00'
+                            type:
+                              type: string
+                              example: Veg
+                            image:
+                              type: string
+                              example: PATH/HMD-desi-makkhan-ghee-400gm.jpg
+                            max_shelf_life:
+                              type: integer
+                              example: 72
+                            shelf_duration:
+                              type: string
+                              example: month
+                            mrp:
+                              type: integer
+                              example: 525
+                            discount:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  example: 1
+                                name:
+                                  type: string
+                                  example: '5% discount'
+                                type:
+                                  type: string
+                                  example: Percent
+                                discount_value:
+                                  type: integer
+                                  example: 5
+                      first_page_url:
+                        type: string
+                        example: 'http://local-hmdindia.in/api/v1/search?page=1'
+                      from:
+                        type: integer
+                        example: 1
+                      next_page_url:
+                        type: string
+                        example: null
+                      path:
+                        type: string
+                        example: 'http://local-hmdindia.in/api/v1/search'
+                      per_page:
+                        type: integer
+                        example: 12
+                      prev_page_url:
+                        type: string
+                        example: null
+                      to:
+                        type: integer
+                        example: 3
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Data not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Data not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Dashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*keyword':
+                  type: string
+                  description: ''
+                  example: 'abc in JSON BODY'
+              required:
+                - '*keyword'
+      security: []
+  /api/v1/get-product-details:
+    post:
+      summary: getProductById
+      operationId: getProductById
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n {\n\"product_id\":1\n}\n<aside class=\"notice\">basepath/api/v1/get-product-by-id</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully list get...'
+                  data:
+                    id: 1
+                    category_id:
+                      id: 1
+                      name: Pickle
+                    unit_id:
+                      id: 3
+                      name: Gm
+                    name: 'HMD Red Chilli Pickle 400gm'
+                    slug: hmd-red-chilli-pickle-400gm
+                    description: 'Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.'
+                    amount: 310
+                    quantity: 50
+                    volume: '400.00'
+                    type: Veg
+                    image: 'http://localhost/upload/image-data/HMD/PRODUCT_IMG/HMD-Red-Chilli-Pickle-400gm.jpg'
+                    max_shelf_life: 72
+                    shelf_duration: month
+                    highlight:
+                      - 'Pure Red Chilli'
+                      - 'Pure Ingredients'
+                      - 'Long Shelf Life'
+                      - Calories
+                      - Protein
+                      - Organic
+                      - 'Chemical Free'
+                      - '100% Natural'
+                      - 'Pure Hand Made'
+                    ingredient:
+                      - 'Red Chilli'
+                      - 'Mustard Oil'
+                      - Termeric
+                      - Salt
+                    nutritional_information:
+                      - 'Sodium 10mg'
+                      - 'Potassium 0.6mg'
+                      - 'Sugar 0mg'
+                      - 'Cholesterol 10mg'
+                    dietary_preference:
+                      - 'Low Cholesterol'
+                      - 'Low Sodium'
+                      - 'Gluten Free'
+                      - 'Wheat Free'
+                    other_feature:
+                      - 'Low Cholesterol'
+                      - Tasty
+                      - Spicy
+                      - 'Sugger Free'
+                      - 'Pure Organic'
+                      - Natural
+                    spice_level: Full
+                    meta_title: 'HMD Red Chilli Pickle 400gm'
+                    meta_description: 'Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.'
+                    meta_keyword: 'best pickle, hand made pickle, pure organic, pickle, red chilli pickle'
+                    mrp: 320
+                    discount:
+                      id: 4
+                      name: '10 rs off'
+                      type: Rupees
+                      discount_value: 10
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully list get...'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      category_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: Pickle
+                      unit_id:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 3
+                          name:
+                            type: string
+                            example: Gm
+                      name:
+                        type: string
+                        example: 'HMD Red Chilli Pickle 400gm'
+                      slug:
+                        type: string
+                        example: hmd-red-chilli-pickle-400gm
+                      description:
+                        type: string
+                        example: 'Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.'
+                      amount:
+                        type: integer
+                        example: 310
+                      quantity:
+                        type: integer
+                        example: 50
+                      volume:
+                        type: string
+                        example: '400.00'
+                      type:
+                        type: string
+                        example: Veg
+                      image:
+                        type: string
+                        example: 'http://localhost/upload/image-data/HMD/PRODUCT_IMG/HMD-Red-Chilli-Pickle-400gm.jpg'
+                      max_shelf_life:
+                        type: integer
+                        example: 72
+                      shelf_duration:
+                        type: string
+                        example: month
+                      highlight:
+                        type: array
+                        example:
+                          - 'Pure Red Chilli'
+                          - 'Pure Ingredients'
+                          - 'Long Shelf Life'
+                          - Calories
+                          - Protein
+                          - Organic
+                          - 'Chemical Free'
+                          - '100% Natural'
+                          - 'Pure Hand Made'
+                        items:
+                          type: string
+                      ingredient:
+                        type: array
+                        example:
+                          - 'Red Chilli'
+                          - 'Mustard Oil'
+                          - Termeric
+                          - Salt
+                        items:
+                          type: string
+                      nutritional_information:
+                        type: array
+                        example:
+                          - 'Sodium 10mg'
+                          - 'Potassium 0.6mg'
+                          - 'Sugar 0mg'
+                          - 'Cholesterol 10mg'
+                        items:
+                          type: string
+                      dietary_preference:
+                        type: array
+                        example:
+                          - 'Low Cholesterol'
+                          - 'Low Sodium'
+                          - 'Gluten Free'
+                          - 'Wheat Free'
+                        items:
+                          type: string
+                      other_feature:
+                        type: array
+                        example:
+                          - 'Low Cholesterol'
+                          - Tasty
+                          - Spicy
+                          - 'Sugger Free'
+                          - 'Pure Organic'
+                          - Natural
+                        items:
+                          type: string
+                      spice_level:
+                        type: string
+                        example: Full
+                      meta_title:
+                        type: string
+                        example: 'HMD Red Chilli Pickle 400gm'
+                      meta_description:
+                        type: string
+                        example: 'Its prepared using 85% of natural red chilli rest included into its pure hande made & natural spices.'
+                      meta_keyword:
+                        type: string
+                        example: 'best pickle, hand made pickle, pure organic, pickle, red chilli pickle'
+                      mrp:
+                        type: integer
+                        example: 320
+                      discount:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 4
+                          name:
+                            type: string
+                            example: '10 rs off'
+                          type:
+                            type: string
+                            example: Rupees
+                          discount_value:
+                            type: integer
+                            example: 10
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Data not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Data not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - Dashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*product_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*product_id'
+      security: []
+  /api/v1/register:
+    post:
+      summary: register
+      operationId: register
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"name\":\"Abc\",\n\"email\":\"You@domain.com\",\n\"mobile\":\"9899****54\",\n\"password\":\"Abc@12345\"\n}\n<aside class=\"notice\">basepath/api/v1/register</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully Registered...'
+                  data:
+                    user_id: 1
+                    email: you@domain.com
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully Registered...'
+                  data:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                        example: 1
+                      email:
+                        type: string
+                        example: you@domain.com
+        202:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 202
+                  message: 'Oops, please try again...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 202
+                  message:
+                    type: string
+                    example: 'Oops, please try again...'
+        409:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 409
+                  message: 'Email Id already exist...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 409
+                  message:
+                    type: string
+                    example: 'Email Id already exist...'
+      tags:
+        - 'Login, Register'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*name':
+                  type: required
+                  description: "String     Ex ('Abc')"
+                  example: vero
+                '*email':
+                  type: required
+                  description: "Email      Ex ('you@domain.com')"
+                  example: madyson78@example.net
+                '*mobile':
+                  type: required
+                  description: "String     Ex ('9876****09')"
+                  example: incidunt
+                '*password':
+                  type: required
+                  description: "String     Ex ('Abc@123')"
+                  example: occaecati
+      security: []
+  /api/v1/login:
+    post:
+      summary: login
+      operationId: login
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\nEX\n {\n\"email_id\":\"You@domain.com\",\n\"password\":\"Abc@12345\"\n}\n <aside class=\"notice\">basepath/api/v1/login</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully login..'
+                  data:
+                    user_data:
+                      user_id: 1
+                      name: 'Md Saddam Hussain'
+                      email: Hussain@gmail.com
+                    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWwtbnJpcy5jYS9hcGkvdjEvbG9naW4iLCJpYXQiOjE2ODk2Nzk3ODYsImV4cCI6MTY4OTY4MzM4NiwibmJmIjoxNjg5Njc5Nzg2LCJqdGkiOiJUeXFsTU95MlA0WXpibXFsIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xSMoCqyWexiUAmnCNmC6xJZjvOWbQM9GMRZuQUYpSfc
+                    token_type: bearer
+                    expires_in: 60
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully login..'
+                  data:
+                    type: object
+                    properties:
+                      user_data:
+                        type: object
+                        properties:
+                          user_id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Md Saddam Hussain'
+                          email:
+                            type: string
+                            example: Hussain@gmail.com
+                      access_token:
+                        type: string
+                        example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWwtbnJpcy5jYS9hcGkvdjEvbG9naW4iLCJpYXQiOjE2ODk2Nzk3ODYsImV4cCI6MTY4OTY4MzM4NiwibmJmIjoxNjg5Njc5Nzg2LCJqdGkiOiJUeXFsTU95MlA0WXpibXFsIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xSMoCqyWexiUAmnCNmC6xJZjvOWbQM9GMRZuQUYpSfc
+                      token_type:
+                        type: string
+                        example: bearer
+                      expires_in:
+                        type: integer
+                        example: 60
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 401
+                  message: 'Incorrect Password...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 401
+                  message:
+                    type: string
+                    example: 'Incorrect Password...'
+                  data:
+                    type: array
+                    example: []
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'Eamil id not found...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'Eamil id not found...'
+                  data:
+                    type: array
+                    example: []
+      tags:
+        - 'Login, Register'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*email_id':
+                  type: required
+                  description: "Number     Ex ('you@domain.com')"
+                  example: eius
+                '*password':
+                  type: required
+                  description: "String     Ex ('********')"
+                  example: ut
+      security: []
+  /api/v1/forgot-pass:
+    post:
+      summary: forgotPass
+      operationId: forgotPass
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath/api/v1/forgot-pass</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully email send...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully email send...'
+                  data:
+                    type: array
+                    example: []
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 201
+                  message: 'Oops, something went wrong...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: 'Oops, something went wrong...'
+        202:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 202
+                  message: 'Oops, please try again...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 202
+                  message:
+                    type: string
+                    example: 'Oops, please try again...'
+      tags:
+        - 'Login, Register'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*email':
+                  type: required
+                  description: "Number     Ex ('you@domain.com')"
+                  example: eulalia42@example.net
+      security: []
+  /api/v1/forgot-password-change:
+    post:
+      summary: changeForgotPassword
+      operationId: changeForgotPassword
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and a response not found!\n\n\n<aside class=\"notice\">basepath/api/v1/forgot-password-change</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully password updated...'
+                  data: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully password updated...'
+                  data:
+                    type: array
+                    example: []
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 201
+                  message: 'Oops, some problem occure, Please try again...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 201
+                  message:
+                    type: string
+                    example: 'Oops, some problem occure, Please try again...'
+      tags:
+        - 'Login, Register'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*email':
+                  type: required
+                  description: "Number     Ex ('you@domain.com')"
+                  example: lavada.schuster@example.net
+                '*new_password':
+                  type: required
+                  description: "String     Ex ('Abc@123')"
+                  example: debitis
+                '*retype_password':
+                  type: required
+                  description: "String     Ex ('Abc@123')"
+                  example: fugit
+      security: []
+  /api/v1/get-user-profile:
+    post:
+      summary: getUserProfile
+      operationId: getUserProfile
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Profile not found and token related response...\n\nEX\n {\n\"user_id\":1\n}\n\n<aside class=\"notice\">basepath/api/v1/get-user-profile</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully Profile Get...'
+                  data:
+                    id: 1
+                    first_name: Abc
+                    last_name: Def
+                    email: you@domain.com
+                    dob: '2023-02-02'
+                    mobile: '9899****54'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully Profile Get...'
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      first_name:
+                        type: string
+                        example: Abc
+                      last_name:
+                        type: string
+                        example: Def
+                      email:
+                        type: string
+                        example: you@domain.com
+                      dob:
+                        type: string
+                        example: '2023-02-02'
+                      mobile:
+                        type: string
+                        example: '9899****54'
+        404:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": false,\n\"status_code\": 404,\n\"message\": \"Profile not found...\",\n\"data\": []\n}\n\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'User Profile Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - '*user_id'
+  /api/v1/change-password:
+    post:
+      summary: changePassword
+      operationId: changePassword
+      description: "If everything is okay, you'll get a `200` OK response with data.\n\nOtherwise, the request will fail with a `404` error, and Oops, something went wrong...\n\nEX\n {\n\"user_id\":1,\n\"current_password\":\"Abc@123456789\",\n\"new_password\":\"Abc@12345\",\n\"retype_password\":\"Abc@12345\"\n}\n<aside class=\"notice\">basepath/api/v1/change-password</aside>"
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  status_code: 200
+                  message: 'Successfully Password Changed...'
+                  result: []
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  status_code:
+                    type: integer
+                    example: 200
+                  message:
+                    type: string
+                    example: 'Successfully Password Changed...'
+                  result:
+                    type: array
+                    example: []
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  status_code: 404
+                  message: 'User not found...'
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: 'User not found...'
+        403:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"status\": false,\n\"status_code\": 403,\n\"message\": \"Current password is not being match...\",\n\"data\": []\n}\n @response 401\n {\n\"message\": \"Token is Invalid\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 419\n {\n\"message\": \"Token is Expired\",\n\"status_code\": 401,\n\"status\": false\n}\n\n\n @response 403\n {\n\"message\": \"Authorised Token Not Found\",\n\"status_code\": 401,\n\"status\": false\n}"
+      tags:
+        - 'User Profile Related'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '*user_id':
+                  type: integer
+                  description: ''
+                  example: 1
+                '*current_password':
+                  type: string
+                  description: ''
+                  example: '1,2,3 in JSON BODY'
+                '*new_password':
+                  type: string
+                  description: ''
+                  example: '1,2,3 in JSON BODY'
+                '*retype_password':
+                  type: string
+                  description: ''
+                  example: '1,2,3 in JSON BODY'
+              required:
+                - '*user_id'
+                - '*current_password'
+                - '*new_password'
+                - '*retype_password'
+tags:
+  -
+    name: 'Country, State, City & Address'
+    description: "\nAPIs for managing all country, state, city"
+  -
+    name: Dashboard
+    description: "\nAPIs for all dashboard"
+  -
+    name: 'Login, Register'
+    description: "\nAPIs for managing all Auth Related"
+  -
+    name: 'User Profile Related'
+    description: "\nAPIs for managing all user's profile related"
